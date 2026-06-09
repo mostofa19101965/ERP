@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App - Local Storage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-wrapper">
+            <header class="header">
+                <h1>📝 My Todo List</h1>
+                <p class="subtitle">Organize your tasks and boost productivity</p>
+            </header>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    />
+                    <button id="addBtn" class="add-btn">Add Task</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">Total Tasks</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value completed" id="completedTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Remaining</span>
+                    <span class="stat-value active" id="remainingTasks">0</span>
+                </div>
+            </div>
+
+            <!-- Todo List -->
+            <div class="todo-list-section">
+                <div id="todoList" class="todo-list">
+                    <!-- Todos will be added here -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">📭</div>
+                    <p>No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="clearCompleted" class="btn-secondary">Clear Completed</button>
+                <button id="clearAll" class="btn-danger">Clear All</button>
+                <button id="exportBtn" class="btn-primary">Export Tasks</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Edit Task</div>
+            <input type="text" id="editInput" class="modal-input" placeholder="Task text..." />
+            <div class="modal-buttons">
+                <button id="saveBtn" class="modal-btn save">Save</button>
+                <button id="cancelBtn" class="modal-btn cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
